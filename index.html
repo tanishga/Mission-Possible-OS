@@ -1,37 +1,91 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Mission Possible OS</title>
-        <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;700&display=swap" rel="stylesheet">
-    </head>    
-    <body style="background-color: navy;
-     background-image: url('space.png'); 
-     background-size: cover; 
-     background-position: center; 
-     background-repeat: no-repeat; 
-     min-height: 100vh; 
-     margin:0; 
-     color: white; 
-     text-align: center; 
-     overflow: hidden; 
-     padding-top: 20px; 
-     font-family: 'Pixelify Sans', sans-serif;">
+<head>
+    <title>Mission Possible OS</title>
 
-        <h1 style="color:cyan; margin: 4px; font-size: 48px;">Mission Possible OS</h1>
-        <h2 style="color:lightblue; margin: 4px;">Welcome Cadet!</h2>
-        <p>
-            Welcome to Mission Possible! Explore the desktop,
-            play games, and complete astronaut challenges.
-        </p>
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;700&display=swap" rel="stylesheet">
+</head>
 
-        <footer 
-        style=" position: fixed; 
-        bottom: 20px; 
-        width: 100%; 
-        text-align: center;">
-        
-        <a href="https://www.nasa.gov/" style="color: cyan; font-size: 20px;">Eplore NASA</a>
-        </footer>
+<body style="
+background-color: navy;
+background-image: url('space.png');
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+min-height: 100vh;
+margin: 0;
+color: white;
+text-align: center;
+overflow: hidden;
+font-family: 'Pixelify Sans', sans-serif;">
 
-    </body>
-</html>             
+    <!-- Top Bar -->
+    <div style="
+    background: rgba(0,0,40,0.65);
+    backdrop-filter: blur(10px);
+    height:60px;
+    width:100%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:25px;
+    box-sizing:border-box;">
+
+        <span style="
+        color:cyan;
+        font-size:28px;
+        font-weight:bold;">
+            Mission Possible OS
+        </span>
+
+        <span id="clock" style="
+        color:white;
+        font-size:22px;">
+            00:00
+        </span>
+
+    </div>
+
+    <h2 style="color:lightblue;">Welcome Cadet!</h2>
+
+    <p>
+        Welcome to Mission Possible! Explore the desktop,
+        play games, and complete astronaut challenges.
+    </p>
+
+    <footer style="
+    position:fixed;
+    bottom:20px;
+    width:100%;
+    text-align:center;">
+
+        <a href="https://www.nasa.gov/"
+        style="color:cyan;font-size:20px;">
+            Explore NASA
+        </a>
+
+    </footer>
+
+    <script>
+
+function updateClock() {
+
+    const now = new Date();
+
+    const time = now.toLocaleTimeString([], {
+        hour: "2-digit",
+        minute: "2-digit"
+    });
+
+    document.getElementById("clock").textContent = time;
+
+}
+
+updateClock();
+
+setInterval(updateClock, 1000);
+
+</script>
+
+</body>
+</html>
